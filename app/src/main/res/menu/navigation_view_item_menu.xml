@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/men1"
+            android:icon="@drawable/audio_call_record"
+            android:title="Home"/>
+
+        <item
+            android:id="@+id/men2"
+            android:icon="@drawable/audio_call_switch_video_call"
+            android:title="Pay"/>
+
+        <item
+            android:id="@+id/men3"
+            android:icon="@drawable/audio_call_record"
+            android:title="Order"/>
+
+        <item
+            android:id="@+id/men4"
+            android:icon="@drawable/audio_call_contact"
+            android:title="History"/>
+
+        <item
+            android:id="@+id/men5"
+            android:icon="@drawable/audio_call_record"
+            android:title="Messages"/>
+
+        <item
+            android:id="@+id/men6"
+            android:icon="@drawable/audio_call_contact"
+            android:title="Stores"/>
+
+        <item
+            android:id="@+id/men7"
+            android:icon="@drawable/audio_call_record"
+            android:title="Gift"/>
+
+        <item
+            android:id="@+id/men8"
+            android:icon="@drawable/audio_call_contact"
+            android:title="Music"/>
+    </group>
+
+    <item android:title="Sub Items">
+        <menu>
+            <item
+                android:checkable="true"
+                android:icon="@drawable/audio_call_contact"
+                android:title="设置"
+                />
+        </menu>
+    </item>
+</menu>
