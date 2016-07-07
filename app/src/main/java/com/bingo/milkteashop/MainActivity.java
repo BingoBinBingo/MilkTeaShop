@@ -2,28 +2,50 @@ package com.bingo.milkteashop;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.bingo.milkteashop.utils.ToastThread;
-import com.squareup.okhttp.MediaType;
+import com.bingo.milkteashop.goods.fragment.GiftFragment;
+import com.bingo.milkteashop.goods.fragment.HistoryFragment;
+import com.bingo.milkteashop.goods.fragment.HomeFragment;
+import com.bingo.milkteashop.goods.fragment.MessagesFragment;
+import com.bingo.milkteashop.goods.fragment.MusicFragment;
+import com.bingo.milkteashop.goods.fragment.OrderFragment;
+import com.bingo.milkteashop.goods.fragment.PayFragment;
+import com.bingo.milkteashop.goods.fragment.StoresFragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.bingo.milkteashop.utils.FragmentType.GIFT_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.HISTORY_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.HOME_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.MESSAGE_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.MUSIC_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.ORDER_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.PAY_FRAG;
+import static com.bingo.milkteashop.utils.FragmentType.STORES_FRAG;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getCanonicalName();
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-    private Toolbar mToolbar;
+    private ViewPager mViewPager;
+    private ShopViewPagerAdapter mAdapter;
+    private Map<Integer, Integer> mFragTypeMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initModel();
+        initData();
         initView();
         initListener();
     }
@@ -32,28 +54,41 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void initData() {
+        mFragTypeMap.put(R.id.men1, HOME_FRAG);
+        mFragTypeMap.put(R.id.men2, PAY_FRAG);
+        mFragTypeMap.put(R.id.men3, ORDER_FRAG);
+        mFragTypeMap.put(R.id.men4, HISTORY_FRAG);
+        mFragTypeMap.put(R.id.men5, MESSAGE_FRAG);
+        mFragTypeMap.put(R.id.men6, STORES_FRAG);
+        mFragTypeMap.put(R.id.men7, GIFT_FRAG);
+        mFragTypeMap.put(R.id.men8, MUSIC_FRAG);
+
+        List<BaseFragment> fragList = new ArrayList<>();
+        fragList.add(HomeFragment.newInstance());
+        fragList.add(PayFragment.newInstance());
+        fragList.add(OrderFragment.newInstance());
+        fragList.add(HistoryFragment.newInstance());
+        fragList.add(MessagesFragment.newInstance());
+        fragList.add(StoresFragment.newInstance());
+        fragList.add(GiftFragment.newInstance());
+        fragList.add(MusicFragment.newInstance());
+
+        mAdapter = new ShopViewPagerAdapter(getSupportFragmentManager(), fragList);
+
+    }
+
     private void initView() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
+        mViewPager = (ViewPager) findViewById(R.id.fragViewPager);
 
-        mToolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setSupportActionBar(mToolbar);
-
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("肿菜的CSDN");
-        actionBar.setHomeAsUpIndicator(R.drawable.audio_call_record);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
+        mViewPager.setAdapter(mAdapter);
+        mViewPager.setCurrentItem(HOME_FRAG);
     }
 
     private void initListener() {
         //Toolbar
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawerLayout.openDrawer(mNavigationView);
-            }
-        });
 
         //DrawerLayout
         mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
@@ -63,12 +98,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                getSupportActionBar().setHomeAsUpIndicator(R.drawable.audio_call_contact);
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
-                getSupportActionBar().setHomeAsUpIndicator(R.drawable.audio_call_record);
             }
 
             @Override
@@ -84,13 +117,18 @@ public class MainActivity extends AppCompatActivity {
                 menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
                 // TODO: 16/7/3  点击不同的Tab，在FrameLayout中显示不同的内容
-                if (menuItem.getItemId() == R.id.men2) {
-                    ToastThread.showMsg("账号的点击");
-                }
+                switchFragment( mFragTypeMap.get(menuItem.getItemId()) );
                 return true;
             }
         });
-
     }
+
+    private void switchFragment(int fragType) {
+        mViewPager.setCurrentItem(fragType);
+    }
+
+
+
+
 
 }
