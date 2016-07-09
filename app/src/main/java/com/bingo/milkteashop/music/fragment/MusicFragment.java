@@ -49,4 +49,9 @@ public class MusicFragment extends BaseFragment {
     protected void renderView() {
 
     }
+
+    @Override
+    public void onLeftBtnClick() {
+
+    }
 }

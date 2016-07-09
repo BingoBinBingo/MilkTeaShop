@@ -63,4 +63,9 @@ public class PayFragment extends BaseFragment {
     protected void renderView() {
 
     }
+
+    @Override
+    public void onLeftBtnClick() {
+
+    }
 }

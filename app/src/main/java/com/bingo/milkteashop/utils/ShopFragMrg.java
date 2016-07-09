@@ -8,7 +8,7 @@ import com.bingo.milkteashop.R;
 import com.bingo.milkteashop.gift.fragment.GiftFragment;
 import com.bingo.milkteashop.goods.fragment.OrderFragment;
 import com.bingo.milkteashop.history.fragment.HistoryFragment;
-import com.bingo.milkteashop.homepage.HomeFragment;
+import com.bingo.milkteashop.homepage.fragment.HomeFragment;
 import com.bingo.milkteashop.message.fragment.MessagesFragment;
 import com.bingo.milkteashop.music.fragment.MusicFragment;
 import com.bingo.milkteashop.pay.fragment.PayFragment;

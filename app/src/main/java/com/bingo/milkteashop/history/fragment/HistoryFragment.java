@@ -49,4 +49,9 @@ public class HistoryFragment extends BaseFragment {
     protected void renderView() {
 
     }
+
+    @Override
+    public void onLeftBtnClick() {
+
+    }
 }

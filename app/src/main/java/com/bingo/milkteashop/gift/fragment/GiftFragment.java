@@ -49,4 +49,9 @@ public class GiftFragment extends BaseFragment {
     protected void renderView() {
 
     }
+
+    @Override
+    public void onLeftBtnClick() {
+
+    }
 }

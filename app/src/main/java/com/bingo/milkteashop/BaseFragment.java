@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by Bingo on 16/7/8.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements ToolBarBtnEvent{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,4 +54,5 @@ public abstract class BaseFragment extends Fragment {
      * 给initView出来的控件渲染数据
      */
     protected abstract void renderView();
+
 }

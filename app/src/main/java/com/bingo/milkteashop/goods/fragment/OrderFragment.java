@@ -52,4 +52,9 @@ public class OrderFragment extends BaseFragment {
     protected void renderView() {
 
     }
+
+    @Override
+    public void onLeftBtnClick() {
+
+    }
 }

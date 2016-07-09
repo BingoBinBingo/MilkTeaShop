@@ -1,4 +1,4 @@
-package com.bingo.milkteashop.homepage;
+package com.bingo.milkteashop.homepage.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -47,6 +47,11 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void renderView() {
+
+    }
+
+    @Override
+    public void onLeftBtnClick() {
 
     }
 }
