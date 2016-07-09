@@ -1,4 +1,4 @@
-package com.bingo.milkteashop.goods.fragment;
+package com.bingo.milkteashop.homepage;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,14 +12,14 @@ import com.bingo.milkteashop.R;
 /**
  * Created by Bingo on 16/7/8.
  */
-public class GiftFragment extends BaseFragment {
-    private static final String TAG = GiftFragment.class.getCanonicalName();
+public class HomeFragment extends BaseFragment {
+    private static final String TAG = HomeFragment.class.getCanonicalName();
 
-    public static GiftFragment newInstance() {
+    public static HomeFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        GiftFragment fragment = new GiftFragment();
+        HomeFragment fragment = new HomeFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -41,7 +41,7 @@ public class GiftFragment extends BaseFragment {
 
     @Override
     protected View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
-        View rootView = inflater.inflate(R.layout.gift_fragment_layout, container, false);
+        View rootView = inflater.inflate(R.layout.home_fragment_layout, container, false);
         return rootView;
     }
 

@@ -8,14 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.bingo.milkteashop.goods.fragment.GiftFragment;
-import com.bingo.milkteashop.goods.fragment.HistoryFragment;
-import com.bingo.milkteashop.goods.fragment.HomeFragment;
-import com.bingo.milkteashop.goods.fragment.MessagesFragment;
-import com.bingo.milkteashop.goods.fragment.MusicFragment;
+import com.bingo.milkteashop.gift.fragment.GiftFragment;
+import com.bingo.milkteashop.history.fragment.HistoryFragment;
+import com.bingo.milkteashop.homepage.HomeFragment;
+import com.bingo.milkteashop.message.fragment.MessagesFragment;
+import com.bingo.milkteashop.music.fragment.MusicFragment;
 import com.bingo.milkteashop.goods.fragment.OrderFragment;
-import com.bingo.milkteashop.goods.fragment.PayFragment;
-import com.bingo.milkteashop.goods.fragment.StoresFragment;
+import com.bingo.milkteashop.pay.fragment.PayFragment;
+import com.bingo.milkteashop.stores.fragment.StoresFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;

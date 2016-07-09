@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="goods_item">
+        <item >dsd</item>
+        <item >123</item>
+        <item >456</item>
+    </string-array>
+</resources>

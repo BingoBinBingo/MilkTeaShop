@@ -1,4 +1,4 @@
-package com.bingo.milkteashop.goods.fragment;
+package com.bingo.milkteashop.message.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

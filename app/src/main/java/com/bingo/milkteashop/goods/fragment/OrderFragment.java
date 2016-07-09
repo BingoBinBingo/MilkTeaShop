@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import com.bingo.milkteashop.R;
 import com.bingo.milkteashop.BaseFragment;
@@ -42,6 +43,8 @@ public class OrderFragment extends BaseFragment {
     @Override
     protected View initView(LayoutInflater inflater, @Nullable ViewGroup container) {
         View rootView = inflater.inflate(R.layout.order_fragment_layout, container, false);
+        ((Spinner)rootView.findViewById(R.id.mySpinner)).setDropDownVerticalOffset(50);
+        ((Spinner)rootView.findViewById(R.id.mySpinner)).setEnabled(true);
         return rootView;
     }
 
