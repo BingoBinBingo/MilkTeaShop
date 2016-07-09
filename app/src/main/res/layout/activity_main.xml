@@ -8,8 +8,8 @@
     android:id="@+id/drawer_layout">
 
     <!-- 内容区域 -->
-    <com.bingo.milkteashop.widgets.FixedViewPager
-        android:id="@+id/fragViewPager"
+    <FrameLayout
+        android:id="@+id/fragContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
