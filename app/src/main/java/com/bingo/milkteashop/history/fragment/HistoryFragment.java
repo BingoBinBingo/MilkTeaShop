@@ -51,7 +51,7 @@ public class HistoryFragment extends BaseFragment {
     }
 
     @Override
-    public void onLeftBtnClick() {
+    public void onOpenDrawerEvent() {
 
     }
 }

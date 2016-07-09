@@ -51,7 +51,7 @@ public class GiftFragment extends BaseFragment {
     }
 
     @Override
-    public void onLeftBtnClick() {
+    public void onOpenDrawerEvent() {
 
     }
 }

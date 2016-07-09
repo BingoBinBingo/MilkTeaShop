@@ -7,6 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bingo.milkteashop.event.OpenDrawerEvent;
+
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by Bingo on 16/7/8.
  */
@@ -15,6 +19,7 @@ public abstract class BaseFragment extends Fragment implements ToolBarBtnEvent{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         initModel();
         initData();
     }
@@ -55,4 +60,12 @@ public abstract class BaseFragment extends Fragment implements ToolBarBtnEvent{
      */
     protected abstract void renderView();
 
+    @Override
+    public void onOpenDrawerEvent() {
+        EventBus.getDefault().post(new OpenDrawerEvent());
+    }
+
+    @Override
+    public void onFragBackEvent() {
+    }
 }

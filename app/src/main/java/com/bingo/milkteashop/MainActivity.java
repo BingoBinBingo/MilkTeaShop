@@ -7,10 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.bingo.milkteashop.event.OpenDrawerEvent;
 import com.bingo.milkteashop.utils.ShopFragMrg;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
 
 import static com.bingo.milkteashop.utils.ShopFragType.GIFT_FRAG;
 import static com.bingo.milkteashop.utils.ShopFragType.HISTORY_FRAG;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initModel() {
         mFragMrg = ShopFragMrg.getInstance(getSupportFragmentManager());
+        EventBus.getDefault().register(this);
     }
 
     private void initData() {
@@ -62,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private void initListener() {
 
         //DrawerLayout
-        mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+        mDrawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
             }
@@ -95,7 +100,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void renderView() {
-        mFragMrg.switchFragment(HOME_FRAG);
+        mFragMrg.switchFragment(ORDER_FRAG);
+    }
+
+    @Subscribe
+    public void onEventMainThread(OpenDrawerEvent event) {
+        mDrawerLayout.openDrawer(mNavigationView);
     }
 
 

@@ -51,7 +51,7 @@ public class MusicFragment extends BaseFragment {
     }
 
     @Override
-    public void onLeftBtnClick() {
+    public void onOpenDrawerEvent() {
 
     }
 }

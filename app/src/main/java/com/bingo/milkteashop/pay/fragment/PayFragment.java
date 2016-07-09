@@ -65,7 +65,6 @@ public class PayFragment extends BaseFragment {
     }
 
     @Override
-    public void onLeftBtnClick() {
-
+    public void onOpenDrawerEvent() {
     }
 }

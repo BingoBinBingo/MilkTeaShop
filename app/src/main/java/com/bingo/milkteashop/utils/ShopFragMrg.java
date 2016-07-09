@@ -63,17 +63,17 @@ public final class ShopFragMrg {
         // 隐藏之前
         Fragment prevFrag = mSysFragMrg.findFragmentByTag(mCurrFragTag);
         if(prevFrag != null) {
-            mSysFragMrg.beginTransaction().hide(prevFrag).commit();
+            mSysFragMrg.beginTransaction().hide(prevFrag).commitAllowingStateLoss();
         }
 
         // 添加现在
         mCurrFragTag = fragTag;
         if(isFragAdded(mCurrFragTag)) {
             //show
-            mSysFragMrg.beginTransaction().show(mFragMap.get(fragTag)).commit();
+            mSysFragMrg.beginTransaction().show(mFragMap.get(fragTag)).commitAllowingStateLoss();
         } else {
             //add
-            mSysFragMrg.beginTransaction().add(FRAG_CONTAINER_ID, mFragMap.get(fragTag), fragTag).commit();
+            mSysFragMrg.beginTransaction().add(FRAG_CONTAINER_ID, mFragMap.get(fragTag), fragTag).commitAllowingStateLoss();
         }
     }
 

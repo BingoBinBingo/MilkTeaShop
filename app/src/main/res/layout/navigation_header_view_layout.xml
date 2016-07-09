@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="152dp"
-    android:background="#a7a7a7">
+    android:background="@color/drawer_msg_bg_color">
 
     <TextView
         android:id="@+id/link_id"
@@ -22,11 +22,4 @@
         android:text="肿菜的CSDN"
         />
 
-    <ImageView
-        android:id="@+id/userPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/audio_call_record"
-        />
 </com.zhy.android.percent.support.PercentRelativeLayout>

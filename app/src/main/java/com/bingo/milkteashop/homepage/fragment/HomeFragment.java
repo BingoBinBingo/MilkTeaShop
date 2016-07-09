@@ -51,7 +51,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    public void onLeftBtnClick() {
+    public void onOpenDrawerEvent() {
 
     }
 }

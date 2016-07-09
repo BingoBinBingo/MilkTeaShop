@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="drawer_msg_bg_color">#343435</color>
+    <color name="drawer_item_bg_color">#454138</color>
+    <color name="appbar_bg_color">#2D2926</color>
+
+    <color name="fragment_bg_color">#fff</color>
+    <color name="text_default_color">#000</color>
+
 </resources>
