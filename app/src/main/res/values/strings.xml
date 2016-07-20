@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">milkTeaShop</string>
+    <string name="Menu_toolbar">Menu</string>
+    <string name="Pay_toolbar">Pay</string>
+    <string name="pay_btn_title">PAY</string>
+    <string name="reload_btn_title">RELOAD</string>
+    <string name="manager_btn_title">MANAGER</string>
 </resources>

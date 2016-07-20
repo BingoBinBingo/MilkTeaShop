@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- dimen -->
+    <string name="pay_card_width_percent">92%w</string>
+    <string name="pay_card_height_percent">32%h</string>
+    <string name="pay_card_margin_top_percent">3%h</string>
+
+    <string name="pay_text_bg_width_percent">16%w</string>
+    <string name="pay_text_bg_height_percent">65%h</string>
+</resources>

@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bingo.milkteashop.event.OpenDrawerEvent;
+import com.bingo.milkteashop.utils.ToastThread;
 
 import de.greenrobot.event.EventBus;
 
@@ -59,6 +61,17 @@ public abstract class BaseFragment extends Fragment implements ToolBarBtnEvent{
      * 给initView出来的控件渲染数据
      */
     protected abstract void renderView();
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        ToastThread.showMsg(item.getItemId() + "");
+        if (item.getItemId() == android.R.id.home) {
+            //actionbar  左边的按钮
+            onOpenDrawerEvent();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onOpenDrawerEvent() {

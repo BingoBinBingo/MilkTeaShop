@@ -1,29 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.android.percent.support.PercentLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fragment_bg_color"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_toolbar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/appbar_bg_color" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/pay_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:elevation="25dp"
+        app:cardBackgroundColor="@color/pay_card_color"
+        app:cardCornerRadius="8dp"
+        app:layout_widthPercent="@string/pay_card_width_percent"
+        app:layout_heightPercent="@string/pay_card_height_percent"
+        app:layout_marginTopPercent="@string/pay_card_margin_top_percent" />
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/money_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        app:layout_widthPercent="80%w"
+        app:layout_heightPercent="10%h"
+        android:background="#f00"
+        android:layout_below="@+id/pay_card"
+        >
+
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <include layout="@layout/seperator_line_layout"
+        android:id="@+id/pay_seperator"
+        android:layout_below="@+id/money_Layout"
+        app:layout_widthPercent="80%w"
+        android:layout_height="1dp"
+        app:layout_marginTopPercent="4%h"
+        app:layout_marginBottomPercent="1%h"
+        android:layout_alignParentRight="true"
+        />
+
+    <TextView
+        android:id="@+id/reloadBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="25%w"
+        app:layout_heightPercent="6%h"
+        android:textColor="#6B6A69"
+        android:gravity="center"
+        android:layout_below="@+id/pay_seperator"
+        android:background="@drawable/reload_mrg_btn_bg_selector"
+        android:text="@string/reload_btn_title"
+        app:layout_marginLeftPercent="14.5%w"
+        />
+
+    <TextView
+        android:id="@+id/managerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="25%w"
+        app:layout_heightPercent="6%h"
+        android:textColor="#6B6A69"
+        android:gravity="center"
+        android:layout_below="@+id/pay_seperator"
+        android:background="@drawable/reload_mrg_btn_bg_selector"
+        android:text="@string/manager_btn_title"
+        android:layout_toRightOf="@+id/reloadBtn"
+        />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:text="我是支付"
-        />
-    <ScrollView
+        android:text="我是支付" />
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f00"
-        >
-        <Button
-            android:id="@+id/showPoppupWindow"
+        android:layout_height="@dimen/fragment_toolbar_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/appbar_bg_color">
+
+        <TextView
+            android:id="@+id/payBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            />
-    </ScrollView>
-
-</com.zhy.android.percent.support.PercentLinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/pay_text_bg_selector"
+            android:gravity="center"
+            android:text="@string/pay_btn_title"
+            android:textColor="@color/white_color"
+            app:layout_heightPercent="@string/pay_text_bg_height_percent"
+            app:layout_marginRightPercent="2%w"
+            app:layout_widthPercent="@string/pay_text_bg_width_percent" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+</com.zhy.android.percent.support.PercentRelativeLayout>

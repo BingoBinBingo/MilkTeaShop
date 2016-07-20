@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void renderView() {
-        mFragMrg.switchFragment(ORDER_FRAG);
+        mFragMrg.switchFragment(PAY_FRAG);
     }
 
     @Subscribe

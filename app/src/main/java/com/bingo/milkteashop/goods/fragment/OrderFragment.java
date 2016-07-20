@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +69,7 @@ public class OrderFragment extends BaseFragment {
         Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        mActionBar.setTitle("Menu");
+        mActionBar.setTitle(R.string.Menu_toolbar);
         mActionBar.setHomeAsUpIndicator(R.drawable.audio_call_record);
         mActionBar.setDisplayHomeAsUpEnabled(true);
         mActionBar.setHomeButtonEnabled(true);
@@ -109,22 +111,25 @@ public class OrderFragment extends BaseFragment {
 
     @Override
     protected void renderView() {
+    }
 
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        getActivity().getMenuInflater().inflate(R.menu.order_menu, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        ToastThread.showMsg(item.getItemId() + "");
-        if (item.getItemId() == android.R.id.home) {
-            //actionbar  左边的按钮
-            onOpenDrawerEvent();
-            return true;
+        ToastThread.showMsg("searchItem clicked");
+        if(item.getItemId() == R.id.searchItem) {
+
         }
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onOpenDrawerEvent() {
-        super.onOpenDrawerEvent();
-    }
 }

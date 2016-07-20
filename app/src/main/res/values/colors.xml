@@ -3,12 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
-    <color name="drawer_msg_bg_color">#343435</color>
-    <color name="drawer_item_bg_color">#454138</color>
+    <color name="white_color">#fff</color>
+    <color name="drawer_msg_bg_color">#222223</color>
+    <color name="drawer_item_bg_color">#2D2926</color>
     <color name="appbar_bg_color">#2D2926</color>
 
     <color name="fragment_bg_color">#fff</color>
     <color name="text_default_color">#000</color>
 
+    <color name="pay_card_color">#22B3DA</color>
+    <color name="pay_text_color_pressed">#474340</color>
+
+    <color name="seperator_line_color">#DDDCDA</color>
+    <color name="reload_mrg_text_bg_color">#EDEBE7</color>
 </resources>
